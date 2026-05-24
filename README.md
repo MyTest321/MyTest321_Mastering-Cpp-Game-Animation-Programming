@@ -142,9 +142,23 @@ sh build_ninja_linux.sh
 
 #### Check Your Ubuntu whether support OpenGL 4.6
 > When you found **glfwCreateWindow** return nullptr, "init error: Could not create window"
-```
+```bash
 $ apt install mesa-utils
 $ glxinfo | grep -E "OpenGL version|Max core profile version"
+```
+
+> When you OpenGL 4.6 well in Windows deive, but not work on Ubuntu Vmware
+```bash
+# vim ~/.bashrc
+# add these two lines
+export MESA_GL_VERSION_OVERRIDE=4.6
+export MESA_GLSL_VERSION_OVERRIDE=460
+
+# Apply the changes to your current terminal
+$ source ~/.bashrc
+
+# then check opengl version again
+$ glxinfo | grep -i "OpenGL version"
 ```
 
 ### Build on Mac

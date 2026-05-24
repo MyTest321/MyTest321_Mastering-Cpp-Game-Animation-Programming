@@ -66,9 +66,13 @@ fi
 
 echo "Cloning SDL2 mixer deps"
 cd "$SCRIPT_PATH/external/SDL2_mixer"
-sh download_SDL_mixer_deps.sh
+chmod +x download_SDL_mixer_deps.sh
+./download_SDL_mixer_deps.sh
 cd "$SCRIPT_PATH"
 
 echo ========================================
 echo Setup completed successfully!
 echo ========================================
+
+#kind of pause
+read -p "Press [Enter] key to continue..."
